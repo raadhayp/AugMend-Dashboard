@@ -56,10 +56,42 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const surveyForm = document.getElementById("surveyForm");
 
-    surveyForm.addEventListener("submit", function(event) {
+    surveyForm.addEventListener("submit", async function(event) {
         event.preventDefault();
         if (validateForm()) {
-            surveyForm.submit();
+            const formData = new FormData(surveyForm);
+            const surveyData = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                age: formData.get('age'),
+                maritalStatus: formData.get('maritalStatus'),
+                otherMaritalStatus: formData.get('otherMaritalStatus') || '',
+                seenTherapist: formData.get('seenTherapist'),
+                medications: formData.get('medications')
+            };
+
+            try {
+                const response = await fetch('http://localhost:3000/surveys', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(surveyData)
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log(data);
+                    alert("Survey data submitted successfully!");
+                    surveyForm.reset(); // Clear the form after submission
+                } else {
+                    console.error('Error submitting survey data:', response.statusText);
+                    alert("Failed to submit survey data. Please try again.");
+                }
+            } catch (error) {
+                console.error('Error submitting survey data:', error);
+                alert("An error occurred while submitting survey data.");
+            }
         } else {
             alert("Please fill out all required fields.");
         }
