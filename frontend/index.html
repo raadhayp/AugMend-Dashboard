@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Auth App</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Welcome to Your AugMend Dashboard!</h1>
+        <div class="button-box" id="buttonBox">
+            <h2>Login Here</h2>
+            <button id="signInButton" class="button">Create Account / Sign In</button>
+        </div>
+        <button id="signOutButton" class="button" style="display: none;">Sign Out</button>
+        <div id="message" style="display: none;">
+            <p>You have signed in as <span id="userName"></span> with the email <span id="userEmail"></span></p>
+            <p>Please fill out your form</p>
+            <button id="formButton" class="button">Form</button>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
+

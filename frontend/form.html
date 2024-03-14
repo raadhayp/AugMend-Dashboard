@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="form.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Survey Form</h1>
+        <form id="surveyForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="age">What is your age?</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="maritalStatus">Which of the following best describes your marital status?</label>
+                <select id="maritalStatus" name="maritalStatus" required>
+                    <option value="" selected disabled>Select</option>
+                    <option value="single">Single</option>
+                    <option value="married">Married</option>
+                    <option value="widowed">Widowed</option>
+                    <option value="other">Other</option>
+                </select>
+                <input type="text" id="otherMaritalStatus" name="otherMaritalStatus" placeholder="Please specify" style="display: none;">
+            </div>
+            <div class="form-group">
+                <label for="seenTherapist">Have you ever seen a therapist for mental health issues?</label>
+                <input type="radio" id="seenTherapistYes" name="seenTherapist" value="yes" required>
+                <label for="seenTherapistYes">Yes</label>
+                <input type="radio" id="seenTherapistNo" name="seenTherapist" value="no" required>
+                <label for="seenTherapistNo">No</label>
+            </div>
+            <div class="form-group" id="medicationQuestion">
+                <label for="medications">Are you taking any medications?</label>
+                <input type="radio" id="medicationsYes" name="medications" value="yes">
+                <label for="medicationsYes">Yes</label>
+                <input type="radio" id="medicationsNo" name="medications" value="no">
+                <label for="medicationsNo">No</label>
+            </div>
+            <div class="form-group" id="medicationDetails" style="display: none;">
+                <label for="medication">Medication Details:</label>
+                <div id="medicationInputs"></div>
+                <button type="button" id="addMedicationButton">Add a new medication</button>
+            </div>
+            <button type="submit" class="button">Submit</button>
+        </form>
+    </div>
+
+    <script type="module" src="form.js"></script>
+</body>
+</html>
