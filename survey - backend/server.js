@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors'); // Import the cors package
+const cors = require('cors');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const Survey = require('./surveyModel');
 
@@ -9,9 +9,9 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
-// Use the cors middleware with specific options to allow requests from http://localhost:5500/frontend/
+// Use the cors middleware with specific options to allow requests from your Vercel deployment
 app.use(cors({
-  origin: 'http://localhost:5500',
+  origin: 'https://aug-mend-dashboard-two.vercel.app', // Update with your Vercel deployment URL
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }));
 
