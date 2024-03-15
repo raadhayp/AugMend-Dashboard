@@ -1,38 +1,55 @@
+<!-- form.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Include external stylesheet for styling the form -->
     <link rel="stylesheet" type="text/css" href="form.css">
+
+    <!-- Meta tags for character set and viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title of the webpage -->
     <title>Survey Form</title>
 </head>
 <body>
+    <!-- Container for the survey form -->
     <div class="container">
+        <!-- Header indicating the purpose of the form -->
         <h1 class="header">Survey Form</h1>
+        
+        <!-- Form element with unique id "surveyForm" -->
         <form id="surveyForm">
+            <!-- Form group for user's name input -->
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
             </div>
+            <!-- Form group for user's email input -->
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
             </div>
+            <!-- Form group for user's age input -->
             <div class="form-group">
                 <label for="age">What is your age?</label>
                 <input type="number" id="age" name="age" required>
             </div>
+            <!-- Form group for user's marital status input -->
             <div class="form-group">
                 <label for="maritalStatus">Which of the following best describes your marital status?</label>
                 <select id="maritalStatus" name="maritalStatus" required>
+                    <!-- Options for marital status -->
                     <option value="" selected disabled>Select</option>
                     <option value="single">Single</option>
                     <option value="married">Married</option>
                     <option value="widowed">Widowed</option>
                     <option value="other">Other</option>
                 </select>
+                <!-- Additional input for specifying marital status if "Other" is selected -->
                 <input type="text" id="otherMaritalStatus" name="otherMaritalStatus" placeholder="Please specify" style="display: none;">
             </div>
+            <!-- Form group for whether the user has seen a therapist -->
             <div class="form-group">
                 <label for="seenTherapist">Have you ever seen a therapist for mental health issues?</label>
                 <input type="radio" id="seenTherapistYes" name="seenTherapist" value="yes" required>
@@ -40,6 +57,7 @@
                 <input type="radio" id="seenTherapistNo" name="seenTherapist" value="no" required>
                 <label for="seenTherapistNo">No</label>
             </div>
+            <!-- Form group for whether the user is taking medications -->
             <div class="form-group" id="medicationQuestion">
                 <label for="medications">Are you taking any medications?</label>
                 <input type="radio" id="medicationsYes" name="medications" value="yes">
@@ -47,15 +65,18 @@
                 <input type="radio" id="medicationsNo" name="medications" value="no">
                 <label for="medicationsNo">No</label>
             </div>
+            <!-- Form group for medication details (hidden initially) -->
             <div class="form-group" id="medicationDetails" style="display: none;">
                 <label for="medication">Medication Details:</label>
                 <div id="medicationInputs"></div>
                 <button type="button" id="addMedicationButton">Add a new medication</button>
             </div>
+            <!-- Button to submit the form -->
             <button type="submit" class="button">Submit</button>
         </form>
     </div>
 
+    <!-- JavaScript module for form validation and submission -->
     <script type="module" src="form.js"></script>
 </body>
 </html>

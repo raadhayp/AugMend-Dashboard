@@ -1,3 +1,8 @@
+/**
+ * surveyModel.js - MongoDB Schema for Survey Data
+ * Defines the Mongoose schema and model for storing survey data in MongoDB.
+ */
+
 const mongoose = require('mongoose');
 
 // Define a Mongoose schema for the survey data

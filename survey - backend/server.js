@@ -1,8 +1,13 @@
+/**
+ * server.js - Backend Server Configuration
+ * Configures and starts the backend server using Express.js.
+ */
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors'); // Import the cors package
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const Survey = require('./surveyModel');
+const Survey = require('./surveyModel'); // Import the Survey model
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -66,7 +71,7 @@ app.post('/surveys', async (req, res) => {
     }
 });
 
-// Endpoint to retrieve survey data (optional)
+// Endpoint to retrieve survey data
 app.get('/surveys', async (req, res) => {
     try {
         // Retrieve all survey data from the database

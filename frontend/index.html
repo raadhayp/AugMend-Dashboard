@@ -1,27 +1,48 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Include external stylesheet for styling -->
     <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <!-- Meta tags for character set and viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title of the webpage -->
     <title>My Auth App</title>
 </head>
 <body>
+    <!-- Container for the webpage content -->
     <div class="container">
+        <!-- Header welcoming users to the dashboard -->
         <h1 class="header">Welcome to Your AugMend Dashboard!</h1>
+        
+        <!-- Container for the login button -->
         <div class="button-box" id="buttonBox">
             <h2>Login Here</h2>
+            <!-- Button to initiate the login process -->
             <button id="signInButton" class="button">Create Account / Sign In</button>
         </div>
-        <button id="signOutButton" class="button" style="display: none;">Sign Out</button>
-        <div id="message" style="display: none;">
-            <p>You have signed in as <span id="userName"></span> with the email <span id="userEmail"></span></p>
-            <p>Please fill out your form</p>
-            <button id="formButton" class="button">Form</button>
+        
+        <!-- Container for sign-out and form buttons -->
+        <div id="buttonContainer">
+            <!-- Button for signing out (initially hidden) -->
+            <button id="signOutButton" class="button" style="display: none;">Sign Out</button>
+            
+            <!-- Message section for displaying user information and form instructions (initially hidden) -->
+            <div id="message" style="display: none;">
+                <!-- Display user's name and email after sign in -->
+                <p>You have signed in as <span id="userName"></span> with the email <span id="userEmail"></span></p>
+                <!-- Instruction to fill out the form -->
+                <p>Please fill out your form</p>
+                <!-- Button to navigate to the form -->
+                <button id="formButton" class="button">Form</button>
+            </div>
         </div>
     </div>
 
+    <!-- JavaScript module for application logic -->
     <script type="module" src="app.js"></script>
 </body>
 </html>
-

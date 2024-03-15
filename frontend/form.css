@@ -1,87 +1,100 @@
 /* form.css */
 
+/* Apply styles to the entire body of the webpage */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: Arial, sans-serif; /* Set font family */
+    background-color: #f0f8ff; /* Set background color */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100vh; /* Set height to 100% of viewport height */
 }
 
+/* Styling for the main container */
 .container {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    width: 400px;
-    text-align: center;
+    background-color: #ffffff; /* Set background color */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+    padding: 30px; /* Add padding */
+    width: 400px; /* Set width */
+    text-align: center; /* Center text */
 }
 
+/* Styling for headers */
 .header {
-    color: #2e8b57;
-    margin-bottom: 20px;
+    color: #2e8b57; /* Set text color */
+    margin-bottom: 20px; /* Add space below the header */
 }
 
+/* Styling for form groups */
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Add space between form groups */
 }
 
+/* Styling for labels */
 label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    display: block; /* Make labels block-level elements */
+    margin-bottom: 5px; /* Add space below labels */
+    font-weight: bold; /* Make labels bold */
 }
 
+/* Styling for input fields and select dropdown */
 input[type="text"],
 input[type="email"],
 input[type="number"],
 select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+    width: 100%; /* Set width to 100% */
+    padding: 10px; /* Add padding */
+    border-radius: 5px; /* Add rounded corners */
+    border: 1px solid #ccc; /* Add border */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
+/* Styling for radio buttons */
 input[type="radio"] {
-    margin-right: 5px;
+    margin-right: 5px; /* Add space between radio buttons */
 }
 
+/* Hide the "Other" marital status input initially */
 #otherMaritalStatus {
-    display: none;
+    display: none; /* Hide the element */
 }
 
+/* Hide the medication details section initially */
 #medicationDetails {
-    display: none;
+    display: none; /* Hide the element */
 }
 
+/* Styling for submit button */
 button[type="submit"] {
-    padding: 15px 30px;
-    background-color: #2e8b57;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    padding: 15px 30px; /* Add padding */
+    background-color: #2e8b57; /* Set background color */
+    color: #ffffff; /* Set text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Add transition effect */
 }
 
+/* Hover effect for submit button */
 button[type="submit"]:hover {
-    background-color: #228b22;
+    background-color: #228b22; /* Change background color on hover */
 }
 
+/* Styling for "Add Medication" button */
 #addMedicationButton {
-    padding: 10px 20px;
-    background-color: #2e8b57;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    padding: 10px 20px; /* Add padding */
+    background-color: #2e8b57; /* Set background color */
+    color: #ffffff; /* Set text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Add transition effect */
 }
 
+/* Hover effect for "Add Medication" button */
 #addMedicationButton:hover {
-    background-color: #228b22;
+    background-color: #228b22; /* Change background color on hover */
 }
