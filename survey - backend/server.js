@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors');
+const cors = require('cors'); // Import the cors package
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const Survey = require('./surveyModel');
 
@@ -9,8 +9,11 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
-// Use the cors middleware with dynamic origin setting
-app.use(cors({ origin: '*' }));
+// Use the cors middleware with custom configuration
+app.use(cors({
+  origin: ['http://localhost:5500', 'https://aug-mend-dashboard-two.vercel.app'],
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}));
 
 // MongoDB Atlas connection URI
 const uri = "mongodb+srv://raadhayp:ssHBaUDyqZZ1K2Ph@cluster0.8dptugt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
@@ -48,9 +51,6 @@ run().catch(console.dir);
 
 // Endpoint to handle submission of survey data
 app.post('/surveys', async (req, res) => {
-    // Set the Access-Control-Allow-Origin header to allow requests from all origins
-    res.setHeader('Access-Control-Allow-Origin', '*');
-
     const surveyData = req.body;
     console.log('Received survey data:', surveyData);
     
