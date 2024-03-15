@@ -9,11 +9,8 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
-// Use the cors middleware with specific options to allow requests from your Vercel deployment
-app.use(cors({
-  origin: 'https://aug-mend-dashboard-two.vercel.app', // Update with your Vercel deployment URL
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}));
+// Use the cors middleware with dynamic origin setting
+app.use(cors());
 
 // MongoDB Atlas connection URI
 const uri = "mongodb+srv://raadhayp:ssHBaUDyqZZ1K2Ph@cluster0.8dptugt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
