@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(express.json());
 // Use the cors middleware with dynamic origin setting
-app.use(cors());
+app.use(cors({ origin: '*' }));
 
 // MongoDB Atlas connection URI
 const uri = "mongodb+srv://raadhayp:ssHBaUDyqZZ1K2Ph@cluster0.8dptugt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
