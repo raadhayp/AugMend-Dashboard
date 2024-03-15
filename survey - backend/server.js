@@ -48,6 +48,9 @@ run().catch(console.dir);
 
 // Endpoint to handle submission of survey data
 app.post('/surveys', async (req, res) => {
+    // Set the Access-Control-Allow-Origin header to allow requests from all origins
+    res.setHeader('Access-Control-Allow-Origin', '*');
+
     const surveyData = req.body;
     console.log('Received survey data:', surveyData);
     
